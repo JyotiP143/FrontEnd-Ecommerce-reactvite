@@ -4,20 +4,31 @@
     "name": "White Sneakers",
     "price": 1299,
     "category": "Shoes",
-    "images": [
-      "/images/s1-1.jpg",
-      "/images/s1-2.jpg"
-    ],
-    "description": "Comfortable white sneakers."
+    "images": ["/products/shoe1-1.jpg", "/products/shoe1-2.jpg"],
+    "description": "Comfortable premium white sneakers for everyday use."
   },
   {
     "id": 2,
     "name": "Black T-shirt",
     "price": 599,
     "category": "Clothing",
-    "images": [
-      "/images/t1-1.jpg"
-    ],
-    "description": "Premium quality cotton T-shirt."
+    "images": ["/products/tshirt1.jpg"],
+    "description": "Soft cotton black T-shirt with modern fit."
+  },
+  {
+    "id": 3,
+    "name": "Men's Wrist Watch",
+    "price": 2499,
+    "category": "Accessories",
+    "images": ["/products/watch1.jpg"],
+    "description": "Stylish wrist watch with leather strap."
+  },
+  {
+    "id": 4,
+    "name": "Blue Denim Jacket",
+    "price": 1799,
+    "category": "Clothing",
+    "images": ["/products/jacket1.jpg"],
+    "description": "Premium denim jacket with modern styling."
   }
 ]

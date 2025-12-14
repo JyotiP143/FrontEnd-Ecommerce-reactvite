@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 // import { useCart } from "../context/CartContext";
 
-const Navbar= () => {
+const Navbar = () => {
   // const { cart } = useCart();
 
   return (
@@ -20,6 +20,7 @@ const Navbar= () => {
           <Link to="/about" className="hover:text-blue-600">About</Link>
           <Link to="/contact" className="hover:text-blue-600">Contact</Link>
         </div>
+
 
         {/* Cart Button */}
         {/* <Link to="/cart" className="relative">
