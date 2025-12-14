@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-// import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
-  // const { cart } = useCart();
+  const { cart } = useCart();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md shadow-sm">
@@ -23,14 +23,14 @@ const Navbar = () => {
 
 
         {/* Cart Button */}
-        {/* <Link to="/cart" className="relative">
+        <Link to="/cart" className="relative">
           <span className="text-xl">🛒</span>
           {cart.length > 0 && (
             <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
               {cart.length}
             </span>
           )}
-        </Link> */}
+        </Link>
 
       </div>
     </nav>

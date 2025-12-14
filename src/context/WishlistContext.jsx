@@ -9,8 +9,9 @@ export const WishlistProvider = ({ children }) => {
     setWishlist(prev =>
       prev.find(p => p.id === product.id)
         ? prev.filter(p => p.id !== product.id)
-        : [...prev, product]
+        : [...prev, product]  
     );
+
   };
 
   return (

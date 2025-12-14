@@ -5,12 +5,22 @@ export const useProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/products.json")
-      .then(res => res.json())
+    fetch("http://localhost:5173/Products.json")
+      .then(res =>{
+        if(!res.ok){
+          throw new Error('Failed to load products.json')
+        }
+        return res.json()
+      })
       .then(data => {
         setProducts(data);
         setLoading(false);
-      });
+        console.log(data)
+      }) 
+      .catch(err => {
+      console.error(err);
+      setLoading(false);
+    });
   }, []);
 
   return { products, loading };
