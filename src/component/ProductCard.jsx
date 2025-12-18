@@ -1,31 +1,54 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-const ProductCard= ({ product })=> {
+const ProductCard = ({ product }) => {
   const { dispatch } = useCart();
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
-      <Link to={`/product/${product.id}`}>
-        <div className="overflow-hidden rounded-lg">
-          <img
-            src={product.images[0]}
-            alt={product.name}
-            className="h-52 w-full object-cover rounded-lg transform hover:scale-110 transition duration-300"
-          />
-        </div>
+    <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
 
-        <h3 className="font-semibold text-lg mt-3">{product.name}</h3>
-        <p className="text-gray-600">₹{product.price}</p>
+      {/* Image */}
+      <Link to={`/product/${product.id}`} className="block relative">
+        <img
+          src={product.images[0]}
+          alt={product.name}
+          className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+
+        {/* Category badge */}
+        <span className="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-medium text-gray-700 shadow">
+          {product.category}
+        </span>
       </Link>
 
-      <button
-        className="w-full mt-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-        onClick={() => dispatch({ type: "ADD", payload: product })}
-      >
-        Add to Cart
-      </button>
+      {/* Content */}
+      <div className="p-5">
+        <Link to={`/product/${product.id}`}>
+          <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
+            {product.name}
+          </h3>
+        </Link>
+
+        <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+          {product.description}
+        </p>
+
+        {/* Price + CTA */}
+        <div className="flex items-center justify-between mt-4">
+          <span className="text-xl font-bold text-gray-900">
+            ₹{product.price}
+          </span>
+
+          <button
+            onClick={() => dispatch({ type: "ADD", payload: product })}
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
 export default ProductCard;
