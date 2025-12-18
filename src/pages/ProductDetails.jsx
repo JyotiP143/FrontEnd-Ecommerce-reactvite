@@ -13,10 +13,7 @@ const ProductGrid = ({ search, category }) => {
   }
 
   const filteredProducts = products.filter(product => {
-    const matchSearch = product.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
+    const matchSearch = product.name.toLowerCase().includes(search.toLowerCase());
     const matchCategory =
       category === "All" || product.category === category;
 
