@@ -13,7 +13,7 @@ const ProductGrid = ({ search, category }) => {
   }
 
   const filteredProducts = products.filter(product => {
-    const matchSearch = product.name.toLowerCase().includes(search.toLowerCase());
+    const matchSearch = product.name.toLowerCase().includes(search);
     const matchCategory =
       category === "All" || product.category === category;
 
@@ -27,7 +27,7 @@ const ProductGrid = ({ search, category }) => {
       </p>
     );
   }
-
+else{
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredProducts.map(product => (
@@ -51,6 +51,7 @@ const ProductGrid = ({ search, category }) => {
       ))}
     </div>
   );
+}
 };
 
 export default ProductGrid;
