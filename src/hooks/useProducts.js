@@ -5,7 +5,7 @@ export const useProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5173/Products.json")
+    fetch("https://fakestoreapi.com/products")
       .then(res =>{
         if(!res.ok){
           throw new Error('Failed to load products.json')

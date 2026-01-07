@@ -10,8 +10,8 @@ const ProductCard = ({ product }) => {
       {/* Image */}
       <Link to={`/product/${product.id}`} className="block relative">
         <img
-          src={product.images[0]}
-          alt={product.name}
+         src={product.image}
+          alt={product.title}
           className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
@@ -24,9 +24,9 @@ const ProductCard = ({ product }) => {
       {/* Content */}
       <div className="p-5">
         <Link to={`/product/${product.id}`}>
-          <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
+          {/* <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
             {product.name}
-          </h3>
+          </h3> */}
         </Link>
 
         <p className="text-sm text-gray-500 mt-1 line-clamp-2">
