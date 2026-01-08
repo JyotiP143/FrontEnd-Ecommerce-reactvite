@@ -5,6 +5,7 @@ export const useProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("mmmmmmmmmmmmmmmmmmmmmmmmmm")
     fetch("https://fakestoreapi.com/products")
       .then(res =>{
         if(!res.ok){

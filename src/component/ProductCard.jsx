@@ -24,9 +24,9 @@ const ProductCard = ({ product }) => {
       {/* Content */}
       <div className="p-5">
         <Link to={`/product/${product.id}`}>
-          {/* <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
-            {product.name}
-          </h3> */}
+          <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
+            {product.title}
+          </h3>
         </Link>
 
         <p className="text-sm text-gray-500 mt-1 line-clamp-2">
